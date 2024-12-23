@@ -1,0 +1,329 @@
+// import SwiftUI
+
+// struct ContentView: View {
+//    @State private var age: Int = 20  // Ваш возраст
+//    @State private var height: Double = 1.75  // Ваш рост
+//    @State private var isStudent: Bool = true  // Ваш статус
+//    @State private var name: String = "John Doe"  // Ваше имя
+
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("Variable Declaration")
+//                .font(.headline)
+//            Text("Age: \(age)")
+//            Text("Height: \(String(format: "%.2f", height)) m")
+//            Text("Is Student: \(isStudent ? "Yes" : "No")")
+//            Text("Name: \(name)")
+//        }
+//        .padding()
+//    }
+// }
+// struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+// }
+
+
+//
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var age: Int = 19  // Ваш возраст
+//
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("Age Evaluation")
+//                .font(.headline)
+//
+//            if age < 18 {
+//                Text("You are a minor.")
+//            } else if age <= 65 {
+//                Text("You are an adult.")
+//            } else {
+//                Text("You are a senior.")
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var age: Int = 19
+//
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("Life Stage Categorization")
+//                .font(.headline)
+//
+//            switch age {
+//            case ..<0:
+//                Text("Invalid age.")
+//            case 0...5:
+//                Text("You are a toddler.")
+//            case 6...12:
+//                Text("You are a child.")
+//            case 13...17:
+//                Text("You are a teenager.")
+//            case 18...64:
+//                Text("You are an adult.")
+//            case 65...:
+//                Text("You are a senior.")
+//            default:
+//                Text("Age not categorized.")
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+//
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var age: Int = 19  // Ваш возраст
+//    @State private var isStudent: Bool = true  // Ваш статус
+//
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("Student Evaluation")
+//                .font(.headline)
+//
+//            if isStudent && age >= 18 && age <= 65 {
+//                Text("You are an adult student.")
+//            } else if isStudent && (age < 18 || age > 65) {
+//                Text("You are a student, but not an adult.")
+//            } else {
+//                Text("Not a student.")
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var number: Int = 0 // Переменная для хранения числа
+//
+//    var body: some View {
+//        VStack(spacing: 20) {
+//            Text("Current Number:")
+//                .font(.headline)
+//
+//            Text("\(number)") // Отображение текущего числа
+//                .font(.largeTitle)
+//                .foregroundColor(.blue)
+//
+//            Button(action: {
+//                number += 1 // Увеличиваем число на 1 при нажатии
+//            }) {
+//                Text("Increase Number")
+//                    .padding()
+//                    .foregroundColor(.white)
+//                    .background(Color.blue)
+//                    .cornerRadius(10)
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("For Loop")
+//                .font(.headline)
+//
+//            ForEach(1...10, id: \.self) { number in
+//                Text("\(number)")
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("While Loop")
+//                .font(.headline)
+//
+//            let start = 10
+//            let output: [String] = {
+//                var number = start
+//                var result: [String] = []
+//                while number >= 1 {
+//                    result.append("\(number)")
+//                    number -= 1
+//                }
+//                return result
+//            }()
+//
+//            ForEach(output, id: \.self) { item in
+//                Text(item)
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+//
+
+//проверить задание ниже
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var userInputs = [10, 5, 0]  // Симуляция ввода
+//    @State private var index = 0
+//    @State private var output: [String] = []
+//
+//    var body: some View {
+//        VStack(spacing: 10) {
+//            Text("Repeat-While Loop")
+//                .font(.headline)
+//
+//            ForEach(output, id: \.self) { Text($0) }
+//
+//            Button("Start Simulation") {
+//                repeat {
+//                    let number = userInputs[index]
+//                    output.append("You entered: \(number)")
+//                    index += 1
+//                } while userInputs[index - 1] != 0
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var num1: String = ""
+//    @State private var num2: String = ""
+//    @State private var operation: String = "+"
+//    @State private var result: String = ""
+//
+//    var body: some View {
+//        VStack(spacing: 15) {
+//            Text("Mini Calculator")
+//                .font(.headline)
+//
+//            // Поля для ввода чисел
+//            TextField("Enter Number 1", text: $num1)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .keyboardType(.decimalPad)
+//                .padding()
+//
+//            TextField("Enter Number 2", text: $num2)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .keyboardType(.decimalPad)
+//                .padding()
+//
+//            // Кнопки выбора операции
+//            HStack {
+//                ForEach(["+", "-", "*", "/"], id: \.self) { op in
+//                    Button(action: {
+//                        operation = op
+//                    }) {
+//                        Text(op)
+//                            .font(.title2)
+//                            .frame(width: 50, height: 50)
+//                            .background(operation == op ? Color.blue : Color.gray)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(10)
+//                    }
+//                }
+//            }
+//
+//            // Кнопка для вычисления результата
+//            Button("Calculate") {
+//                calculateResult()
+//            }
+//            .padding()
+//            .background(Color.green)
+//            .foregroundColor(.white)
+//            .cornerRadius(10)
+//
+//            // Отображение результата
+//            Text(result)
+//                .font(.title2)
+//                .padding()
+//        }
+//        .padding()
+//    }
+//
+//    private func calculateResult() {
+//        guard let number1 = Double(num1), let number2 = Double(num2) else {
+//            result = "Invalid input. Please enter valid numbers."
+//            return
+//        }
+//
+//        switch operation {
+//        case "+":
+//            result = "Result: \(number1 + number2)"
+//        case "-":
+//            result = "Result: \(number1 - number2)"
+//        case "*":
+//            result = "Result: \(number1 * number2)"
+//        case "/":
+//            result = number2 != 0 ? "Result: \(number1 / number2)" : "Error: Division by zero."
+//        default:
+//            result = "Invalid operation."
+//        }
+//    }
+//}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
